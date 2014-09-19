@@ -122,9 +122,6 @@ document.forms example
      You have $<?php echo $total; ?> in your piggy bank.
     </p>
 	
- <?php 
- print_r(get_loaded_extensions());
- ?>
 	
 </div>
 <div class="right">
