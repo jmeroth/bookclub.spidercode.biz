@@ -1,175 +1,29 @@
-<!DOCTYPE html>
+<?php # Script 3.7 - index.php #2
 
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-	<style type="text/css">
+// This function outputs theoretical HTML
+// for adding ads to a Web page.
+function create_ad() {
+	echo '<p class="ad">This is an annoying ad! This is an annoying ad! This is an annoying ad! This is an annoying ad!</p>';
+} // End of the function definition.
 
+$page_title = 'Welcome to this Site!';
+include ('includes/header.html');
 
-	div
-		{border-radius: 8px;}
-	body
-		{font-family:Arial;}
-	#header
-		{text-align:center;
-		z-index:1;
-		position:fixed;
-		width:100%;
-		margin-top:-7px;
-		height:110px;
-		background-color:#ffffff;
-		margin-bottom:7px;
-		font-family:Verdana,sans-serif;
-		font-size:14px;
-		color:#2f4f4f;
-		box-shadow: 5px 5px 5px #888;}
-	#email
-		{margin-right:5px;
-		padding-top:5px;
-		font-size:14px;
-		font-family:Verdana,sans-serif;
-		color: #800000;}
-	h3
-		{margin-left: 5px;
-		margin-bottom: 15px;
-		FONT FACE="Calibri, sans-serif";}
-	.right p
-		{margin-left:5px;
-		margin-right:5px;
-		margin-top:-10px;
-		color:#000000;}
-	ul
-		{margin:10px 10px 30px 10px;}
-	li
-		{list-style-type:square;}
-	a:hover
-		{font-weight:bold;}
-	.left
-		{position:relative;
-		float:left;
-		margin-top:130px;
-		#height:2000px;
-		width:60%;
-		background-color:#B9D7D9;
-		margin-bottom: 10px;}
-	.right
-		{position:relative;
-		float:right;
-		margin-top:130px;
-		width:38%;
-		#height:2000px;
-		background-color:#F4EBC3;
-		margin-bottom:10px;}
-	#footer
-		{position:relative;
-		height:50px;
-		background-color:#668284;
-		clear:both;
-		font-size:14px;
-		text-align:center;
-		color: #ffffff;}
-	#footer p
-		{position:relative;
-		padding-top:15px;}
-	label
-		{font-weight: bold;
-		color: #300ACC;}
-
-	</style>
-	<title>John Meroth</title>
-
-</head>
-<body>
-<div id="header"><strong>John F. Meroth</strong><br />
-<img src="JohnSubway124_92.bmp" alt="my picture" /></div>
-<div class="left">
-<p>
-	I am an application developer working with web applications and databases.  I am currently studying dynamic web application technologies such as php and javascript.  I also have programming skills in C++, Java, pl/sql and Python.  I own both Linux and Windows machines.  My hobbies include running, hiking, motorcycles and travel.
-</p>
-<?php
-	# John Meroth 20150101
-	# Practice php script
-	#
-	# Define 4 different variables, which will each represent how much a given coin is worth
-	$penny_value   = .01;
-	$nickle_value  = .05;
-	$dime_value    = .10;
-	$quarter_value = .25;
-
-	# Define 4 more variables, which will each represent how many of each coin is in the bank
-	$pennies  = 100;
-	$nickles  = 25;
-	$dimes    = 100;
-	$quarters = 9034;
-
-	# Add up how much money is in the piggy bank
-	$total = ($pennies * $penny_value) + ($nickles * $nickle_value) + ($dimes * $dime_value) + ($quarters * $quarter_value);
-	$total = number_format($total,2);
+// Call the function:
+create_ad();
 ?>
-<img src='http://making-the-internet.s3.amazonaws.com/php-phpiggy-bank.png' alt='PHPiggy Bank Logo'>
+
+<h1>About the book club...</h1>
+<img src="http://www.davidszondy.com/future/robot/asimov.jpg" alt="asimov" />
+		
+	<p>Born in the smoke filled "Cocina del Hombre" night-spot, in the nuvo-trendy union district of Somervilletown... this small but diverse group of sci-fi fans plan to gather and soak in the works of Isaac Asimov.</p>
+	
+	<p>Volutpat at varius sed sollicitudin et, arcu. Vivamus viverra. Nullam turpis. Vestibulum sed etiam. Lorem ipsum sit amet dolore. Nulla facilisi. Sed tortor. Aenean felis. Quisque eros. Cras lobortis commodo metus. Vestibulum vel purus. In eget odio in sapien adipiscing blandit. Quisque augue tortor, facilisis sit amet, aliquam, suscipit vitae, cursus sed, arcu lorem ipsum dolor sit amet.</p>
+
 <?php
-	echo "You have <b>\$$total</b> in your piggy bank.<br />\n";
-	echo $_SERVER['SCRIPT_FILENAME'] . "<br />\n";
-	echo $_SERVER['HTTP_USER_AGENT'] . "<br />\n";
-	echo $_SERVER['SERVER_SOFTWARE'] . "<br />\n";
-	echo PHP_VERSION . "<br />";
-	echo PHP_OS . "<br />";
 
+// Call the function again:
+create_ad();
+
+include ('includes/footer.html');
 ?>
-<p>
-	document.forms example
-</p>
-<form action = "handle_form.php" method = "post">
-	<fieldset><legend>Enter your information in the form below: </legend>
-	
-	<p><label>Name: <input type="text" name="name" size="20" maxlength="40" /></label></p>
-	
-	<p><label>Email Address: <input type="text" name="email" size="40" maxlength="60" /></label></p>
-	
-	<p><label for="gender">Gender: </label><input type="radio" name="gender" value="M" /> Male
-	<input type="radio" name="gender" value="F" /> Female</p>
-	
-	<p><label>Age: <select name="age">
-		<option value="0-29">Under 30</option>
-		<option value="30-60">Between 30 and 60</option>
-		<option value="60+">Over 60</option>
-	</select></label></p>
-	
-	<p><label>Comments: <textarea name="comments" rows="3" cols="40"></textarea></label></p>
-	
-	</fieldset>
-	
-	<p align="center"><input type="submit" name="submit" value="Submit my information" /></p>
-	
-</form>
-
-</p>	
-	
-</div>
-<div class="right">
-<h3>PROJECT1:</h3>
-<br/>
-<p>This Portfolio Page</p
-<p><a href="https://github.com/jmeroth/p1.spidercode.biz">GitHub repository</a></p>
-<br/>
-<h3>PROJECT 2:</h3>
-<br/>
-<p><a href="http://p2.spidercode.biz">details</a></p>
-<p><a href="https://github.com/jmeroth/p2.spidercode.biz">GitHub repository</a></p>
-<br/>
-<h3>PROJECT 3:</h3>
-<br/>
-<p><a href="http://p3.spidercode.biz">details</a></p>
-<p><a href="https://github.com/jmeroth/p3.spidercode.biz">GitHub repository</a></p>
-<br/>
-<h3>PROJECT 4:</h3>
-<br/>
-<p><a href="http://p4.spidercode.biz">details</a></p>
-<p><a href="https://github.com/jmeroth/p4.spidercode.biz">GitHub repository</a></p>
-</div>
-<div id="footer">
-<p><em>Technologies: </em>HTML5, CSS, Git, Notepad&#43;&#43;</font></p>
-</div>
-</div>
-</body>
-</html>
