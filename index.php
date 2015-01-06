@@ -119,15 +119,30 @@
 <p>
 	document.forms example
 </p>
-<form action = "index.php" method = "post" id="robby">
-  <input type="button" onclick="alert(document.forms[0].id);" value="robby's form" />
+<form action = "handle_form.php" method = "post">
+	<fieldset><legend>Enter your information in the form below: </legend>
+	
+	<p><label>Name: <input type="text" name="name" size="20" maxlength="40" /></label></p>
+	
+	<p><label>Email Address: <input type="text" name="email" size="40" maxlength="60" /></label></p>
+	
+	<p><label for="gender">Gender: </label><input type="radio" name="gender" value="M" /> Male
+	<input type="radio" name="gender" value="F" /> Female</p>
+	
+	<p><label>Age: <select name="age">
+		<option value="0-29">Under 30</option>
+		<option value="30-60">Between 30 and 60</option>
+		<option value="60+">Over 60</option>
+	</select></label></p>
+	
+	<p><label>Comments: <textarea name="comments" rows="3" cols="40"></textarea></label></p>
+	
+	</fieldset>
+	
+	<p align="center"><input type="submit" name="submit" value="Submit my information" /></p>
+	
 </form>
-<form id="dave">
-  <input type="button" onclick="alert(document.forms[1].id);" value="dave's form" />
-</form>
-<form id="paul">
-  <input type="button" onclick="alert(document.forms[2].id);" value="paul's form" />
-</form>
+
 </p>	
 	
 </div>
