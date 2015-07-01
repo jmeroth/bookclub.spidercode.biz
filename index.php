@@ -32,23 +32,50 @@ create_ad();
 	<p><em>-from Wikipedia</em></p>
 	
 
-	<p><b>******** Test Space *************************</b></p>
+<p><b>******** Test Space *************************</b></p>
 
-	
 <?php
 
-$mynum = 2402;
-$mymod = $mynum%2;
-if ($mymod == 0) {
-	echo "even";
+function makeArr($s, $l) {
+	for ($i = 0; $i < $l; $i++) {
+		$newArr[] = $s + $i;
+	}
+	return implode(',', $newArr);
 }
-else {
-	echo "odd";
+
+function FizzBuzz($myArray) {
+	$myString = "";
+	for ($j = 0; $j < count($myArray); $j++) {
+		$i = $myArray[$j];
+		if (!($i % 15))
+			$myString += "FizzBuzz ";
+		else if (!($i % 3))
+			$myString += "Fizz ";
+		else if (!($i % 5))
+			$myString += "Buzz ";
+		else
+			$myString += "$i ";
+	}
+return $myString;
 }
-echo "<b>
-		<p> $mynum </p>
-		<p> $mymod </p>
-	 </b>";
+
+function main($key) {
+	for ($length = 1; $length <=100; $length++) {
+		for ($start = 1; $start <= 101 - $length; $start++) {
+			echo makeArr($start, $length) . '<br/>';
+			if (FizzBuzz(makeArr($start, $length)) == $key) {
+				echo makeArr($start, $length) . '<br/>';
+				exit();
+			}
+		}
+	}
+}
+
+main('Fizz Buzz');
+
+
+
+// <p><b>******** End of Test Space *******************</b></p>
 
 // Call the function again:
 create_ad();
